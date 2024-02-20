@@ -8,5 +8,5 @@ $('.js-accordion .accordion__trigger').on('click', function(e) {
 
     const $this = $(this);
 
-    $this.closest('.js-accordion').toggleClass('is-active').stopPropagation();
+    $this.closest('.js-accordion').toggleClass('is-active');
 });
