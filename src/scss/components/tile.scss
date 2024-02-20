@@ -1,0 +1,73 @@
+/* ------------------------------------------------------------ *\
+ Tile
+\* ------------------------------------------------------------ */
+
+.tile {
+    border-radius: .5rem;
+    position: relative;
+    color: $c-white;
+    text-align: center;
+    min-height: 12.5rem;
+    width: 100%;
+    height: 100%;
+    
+    .tile__content {
+        margin: auto;
+        position: relative;
+        z-index: 3;
+        padding: 1rem 1.6rem;
+        color: $c-white;
+
+        h5 {
+            line-height: 1.1;
+
+            @include breakpoint-down(large-desktop) {
+                font-size: 1.8rem;
+            }
+
+            @include breakpoint-down(small-desktop) {
+                font-size: 1.7rem;
+            }
+        }
+    }
+    
+    > a {
+        transition: opacity $t-duration;
+        z-index: 4;
+        text-decoration: none;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+    
+        &:hover {
+            @include breakpoint-up(tablet) {
+                opacity: .7;
+            }
+        }
+    }
+
+    .tile__media,
+    .tile__media img,
+    .tile__media:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+    }
+
+    .tile__media {
+        &:after {
+            content: '';
+            background-color: $c-black;
+            opacity: .3;
+            z-index: 2;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+/* ------------------------------------------------------------ *\
+ cards
+\* ------------------------------------------------------------ */
+
+.cards {
+  &:not(:last-child) {
+    margin-bottom: 8rem;
+
+    @include breakpoint-down(xl-desktop) {
+      margin-bottom: 6rem;
+    }
+
+    @include breakpoint-down(small-desktop) {
+      margin-bottom: 5rem;   	
+    }
+
+    @include breakpoint-down(mobile) {
+     margin-bottom: 4rem;   
+    }
+  }
+
+  .cards__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2.4rem -1rem;
+
+    @include breakpoint-down(xl-desktop) {
+      margin: -1.8rem -1rem;
+    }
+
+    @include breakpoint-down(small-desktop) {
+      margin: -1rem -.7rem;   	
+    }
+
+    @include breakpoint-down(tablet) {
+      margin:  -1.8rem -1rem;
+    }
+
+    @include breakpoint-down(mobile) {
+      margin:  -1.4rem -1rem;
+    }
+
+    @include breakpoint-down(mobile-medium) {
+      display: block; 
+    }
+  }
+
+  .cards__item {
+    padding: 2.4rem 1rem;
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+
+    @include breakpoint-down(xl-desktop) {
+      padding: 1.8rem 1rem;
+    }
+
+    @include breakpoint-down(small-desktop) {
+      padding: 1rem .7rem;   	
+    }
+
+    @include breakpoint-down(tablet) {
+      flex: 0 0 50%;
+      max-width: 50%;  
+      padding: 1.8rem 1rem; 	
+    }
+
+    @include breakpoint-down(mobile) {
+      padding: 1.4rem 1rem;
+    }
+
+    @include breakpoint-down(mobile-medium) {
+      max-width: 100%;
+    }
+  }
+}

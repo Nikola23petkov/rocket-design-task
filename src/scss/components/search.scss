@@ -1,0 +1,78 @@
+/* ------------------------------------------------------------ *\
+ Search
+\* ------------------------------------------------------------ */
+
+.search {
+    position: relative;
+    max-width: 53.9rem;
+    width: 100%;
+
+    .search__field {
+        background-color: transparent;
+        border: 1px solid $c-gray;
+        border-radius: .5rem;
+        height: 5rem;
+        padding: .3rem 7rem .3rem 1rem;
+        font-size: 1.2rem;
+        width: 100%;
+
+        @include breakpoint-down(large-desktop) {
+            height: 4rem;
+		}
+
+        @include breakpoint-down(mobile) {
+            font-size: 1.6rem;
+        }
+    }
+
+    .search__field::placeholder {
+        font-size: 1.2rem;
+        opacity: 1;
+        color: #888;
+    }
+    
+    .search__btn {
+        background-color: $c-red;
+        width: 6rem;
+        height: 5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 0 .5rem .5rem 0;
+        border: none;
+
+        @include breakpoint-down(large-desktop) {
+            height: 4rem;
+		}
+
+        @include breakpoint-down(mobile-medium) {
+            width: 4rem;
+        }
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2.2rem;
+        width: 2rem;
+        height: 2rem;
+        pointer-events: none;
+        z-index: 2;
+        background-image: url('../assets/images/ico-search.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include breakpoint-down(large-desktop) {
+            width: 1.8rem;
+            height: 1.8rem;
+		}
+
+        @include breakpoint-down(mobile-medium) {
+            width: 1.4rem;
+            height: 1.4rem;
+            right: 1.4rem;
+        }
+    }
+}

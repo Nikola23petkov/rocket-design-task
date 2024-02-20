@@ -1,0 +1,28 @@
+/* ------------------------------------------------------------ *\
+ Section prime
+\* ------------------------------------------------------------ */
+
+.section-prime {
+    padding: 0rem 0 10rem;
+
+    @include breakpoint-down(xl-desktop) {
+        padding-bottom: 7rem;
+    }
+
+    @include breakpoint-down(small-desktop) {
+        padding-bottom: 5.5rem;   	
+    }
+
+    @include breakpoint-down(mobile) {
+        padding-bottom: 4rem;
+    }
+    
+    .section__inner {
+        display: flex;
+
+        @include breakpoint-down(tablet) {
+            display: block;
+        }
+    }
+}
+

@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------ *\
+	Nav-trigger
+\* ------------------------------------------------------------ */
+
+.nav-trigger {
+	transition: opacity $t-duration, visibility $t-duration;
+	height: 20px;
+	width: 30px;
+	display: inline-block;
+	position: relative;
+	z-index: 55;
+
+	span:nth-child(1),
+	span:nth-child(2),
+    span:nth-child(3) {
+		content: '';
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: $c-base;
+		transition: transform $t-duration;
+	}
+
+	span:nth-child(1) {
+		top: 0;
+	}
+
+    span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+	span:nth-child(3) {
+		bottom: 0;
+	}
+
+	&.is-open {
+		span:nth-child(2) {
+			display: none;
+		}
+
+		span:nth-child(1) {
+			transform: rotate(45deg) translate(6px, 6px);
+		}
+
+        span:nth-child(3) {
+			transform: rotate(-45deg) translate(5px, -6px);
+		}
+	}
+}

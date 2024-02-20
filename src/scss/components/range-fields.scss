@@ -1,0 +1,15 @@
+/* ------------------------------------------------------------ *\
+ range fields
+\* ------------------------------------------------------------ */
+
+.range-fields {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: -.3rem -.5rem;
+
+    .range-field {
+        padding: .3rem .5rem;
+        flex: 1;
+    }
+}

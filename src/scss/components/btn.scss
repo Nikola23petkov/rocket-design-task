@@ -1,0 +1,40 @@
+/* ------------------------------------------------------------ *\
+	Button
+\* ------------------------------------------------------------ */
+
+.btn {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	appearance: none;
+	font-size: 1.8rem;
+	font-weight: 700;
+	line-height: 1;
+	background-color: $c-base;
+	border-radius: .5rem;
+	color: $c-white;
+	transition: opacity $t-duration;
+	padding: 1.4rem 1rem 1.2rem;
+
+	@include breakpoint-down(small-desktop) {
+		font-size: 1.6rem;
+		padding: 1rem 1rem 1rem;
+	}
+
+	&:hover {
+		@include breakpoint-up(tablet) {
+			opacity: .7;
+		}
+	}
+}
+
+
+/*  Btn block  */
+
+.btn--block {
+	display: block;
+	padding-left: 0;
+	padding-right: 0;
+}

@@ -1,0 +1,45 @@
+/* ------------------------------------------------------------ *\
+ feature
+\* ------------------------------------------------------------ */
+
+.feature {
+    &:not(:last-child) {
+        margin-bottom: 1.5rem;
+
+        @include breakpoint-down(mobile) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    h5:not(:last-child) {
+        margin-bottom: 1rem;       
+    
+        @include breakpoint-down(mobile) {
+            margin-bottom: .4rem;
+        }
+    }
+
+    .feature__entry {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            margin: 0 1rem 0 0;
+            line-height: 1.2;
+        }
+
+        a {
+            transition: opacity $t-duration;
+            display: inline-block;
+            text-decoration: none;
+            flex: 0 0 1.7rem;
+
+            &:hover {
+                @include breakpoint-up(tablet) {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}

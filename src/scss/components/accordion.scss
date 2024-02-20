@@ -1,0 +1,137 @@
+/* ------------------------------------------------------------ *\
+ Accordion
+\* ------------------------------------------------------------ */
+
+.accordion.js-accordion {
+    >.accordion__content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows $t-duration;
+    }
+
+    >.accordion__content>.accordion__inner {
+        overflow: hidden;
+    }
+
+    .accordion__head {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    >.accordion__trigger,
+    >.accordion__head>.accordion__trigger {
+        min-height: .9rem;
+        position: relative;
+        padding-right: 5rem;
+        display: flex;
+        cursor: pointer;
+
+        &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2.9rem;
+            width: .2rem;
+            height: 1.5rem;
+            background-color: $c-base;
+            transition: opacity $t-duration, transform $t-duration;
+
+            @include breakpoint-down(large-desktop) {
+                height: 1.2rem;
+                right: 2.8rem;
+            }
+
+            @include breakpoint-down(small-desktop) {
+                right: 1.7rem;
+            }
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            right: 2.3rem;
+            width: 1.5rem;
+            height: .2rem;
+            background-color: $c-base;
+            transition: opacity $t-duration;
+
+            @include breakpoint-down(large-desktop) {
+                width: 1.2rem;
+            }
+
+            @include breakpoint-down(small-desktop) {
+                right: 1.2rem;
+            }
+        }
+    }
+
+    &.is-active {
+        >.accordion__content {
+            grid-template-rows: 1fr;
+        }
+
+        >.accordion__trigger,
+        >.accordion__head>.accordion__trigger {
+            &:before {
+                transform: translateY(-50%) rotate(90deg);
+            }
+
+            &:after {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+//accordion mobile
+
+.accordion--mobile.js-accordion {
+    >.accordion__content {
+        display: block;
+
+        @include breakpoint-down(small-desktop) {
+            display: grid;
+        }
+    }
+
+    >.accordion__trigger,
+    >.accordion__head>.accordion__trigger {
+        min-height: .9rem;
+        padding-right: 3rem;
+
+        &:before {
+            right: .3rem;
+            width: .2rem;
+            height: .9rem;
+            background-color: $c-base;
+            display: none;
+
+            @include breakpoint-down(small-desktop) {
+                display: block;
+            }
+        }
+
+        &:after {
+            right: 0;
+            width: .9rem;
+            height: .2rem;
+            background-color: $c-base;
+            display: none;
+
+            @include breakpoint-down(small-desktop) {
+                display: block;
+            }
+        }
+    }
+
+    >.accordion__content>ul,
+    >.accordion__content>.accordion__inner {
+        @include breakpoint-down(small-desktop) {
+            overflow: hidden;
+        }
+    }
+}

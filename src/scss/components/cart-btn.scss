@@ -1,0 +1,48 @@
+/* ------------------------------------------------------------ *\
+	Cart-btn
+\* ------------------------------------------------------------ */
+
+.cart-btn {
+    display: flex;
+    align-items: center;
+    
+    .btn-icon + .cart__entry {
+        margin-left: 1rem;
+    }
+
+    .cart__entry {
+        flex: 1;
+
+        @include breakpoint-down(small-desktop) {
+            display: none;;
+		}
+        
+        > span {
+            display: block;
+            font-size: 1.6rem;
+            line-height: 1.1;
+            margin-bottom: .4rem;
+        }
+
+        p {
+            color: $c-red;
+            line-height: 1;
+            font-weight: 700;
+            display: flex;
+            align-items: flex-end;
+
+            span {
+                font-size: 2.8rem;
+
+                @include breakpoint-down(large-desktop) {
+                    font-size: 2.4rem;
+                }
+            }
+
+            span sup {
+                vertical-align: top;
+                font-size: 50%;
+            }
+        }
+    }
+}

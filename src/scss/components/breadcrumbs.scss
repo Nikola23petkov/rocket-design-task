@@ -1,0 +1,52 @@
+/* ------------------------------------------------------------ *\
+ Breadcrumbs
+\* ------------------------------------------------------------ */
+
+.breadcrumbs {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style-type: none;
+    }
+
+    li {
+        line-height: 1;
+    }
+
+    li:not(:last-child) {
+        padding-right: 1.6rem;
+        margin-right: 1.4rem;
+        position: relative;
+
+        @include breakpoint-down(mobile-medium) {
+            padding-right: 1rem;
+            margin-right: 0.6rem;
+        }
+
+        &:after {
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: .4rem;
+            height: .6rem;
+            background-image: url('../assets/images/ico-arrow-right-alt.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    a {
+        transition: opacity $t-duration;
+        text-decoration: none;
+        font-size: 1.6rem;
+
+        &:hover {
+            @include breakpoint-up(tablet) {
+                opacity: .7;
+            }
+        }
+    }
+
+}

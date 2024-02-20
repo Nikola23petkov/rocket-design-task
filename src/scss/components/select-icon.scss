@@ -1,0 +1,22 @@
+/* ------------------------------------------------------------ *\
+	Select-icon
+\* ------------------------------------------------------------ */
+
+.select-icon {
+    position: relative;
+
+    select {
+        background-color: transparent;
+        border: none;
+        font-size: 1.6rem;
+        line-height: 1;
+
+        &::placeholder {
+            color: $c-white;
+        }
+
+        option {
+            color: $c-base;
+        }
+    }
+}

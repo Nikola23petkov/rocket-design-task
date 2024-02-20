@@ -1,0 +1,209 @@
+/* ------------------------------------------------------------ *\
+	Footer
+\* ------------------------------------------------------------ */
+
+.footer {
+	background-color: $c-base;
+	color: $c-white;
+	position: relative;
+
+	.footer__inner {
+		padding: 7rem 0; 
+
+		@include breakpoint-down(xl-desktop) {
+			padding: 5rem 0;
+		}
+
+		@include breakpoint-down(large-desktop) {
+			padding: 4rem 0;	
+		}
+
+		@include breakpoint-down(tablet) {
+			padding: 3rem 0;
+		}
+	}
+
+	.footer__cols {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 -1.8rem;
+
+		@include breakpoint-down(large-desktop) {
+			margin: 0 -1.5rem;	
+		}
+
+		@include breakpoint-down(tablet) {
+			flex-wrap: wrap;
+			margin: -1.5rem -1rem;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			display: block;
+        }
+	}
+
+	.footer__col {
+		flex: 1;
+		padding: 0 1.8rem;
+
+		@include breakpoint-down(large-desktop) {
+			padding: 0 1.5rem;	
+		}
+
+		@include breakpoint-down(tablet) {
+			flex: 0 0 50%;
+			max-width: 50%;
+			padding: 1.5rem 1rem;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			max-width: 100%;
+        }
+	}
+
+	.footer__content {
+		padding-right: 9rem;
+
+		@include breakpoint-down(xl-desktop) {
+			padding-right: 3rem;
+		}
+
+		@include breakpoint-down(large-desktop) {
+			padding-right: 2rem;	
+		}
+
+		@include breakpoint-down(small-desktop) {
+			padding-right: 0;
+			font-size: 1.6rem;
+		}
+
+		h3 {
+			position: relative;
+			padding-bottom: 2.4rem;
+
+			@include breakpoint-down(large-desktop) {
+				padding-bottom: 1.7rem;
+			}
+
+			@include breakpoint-down(tablet) {
+				padding-bottom: 1.2rem;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 1.9rem;
+
+				@include breakpoint-down(large-desktop) {
+					margin-bottom: 1.3rem;
+				}
+				
+				@include breakpoint-down(tablet) {
+					margin-bottom: 0.8rem;
+				}
+			}
+
+			&:after {
+				position: absolute;
+				content: '';
+				bottom: 0;
+				left: 0;
+				width: 12.7rem;
+				height: .3rem;
+				background-color: $c-red;
+				
+				@include breakpoint-down(large-desktop) {
+					width: 9rem;
+				}
+
+				@include breakpoint-down(tablet) {
+					width: 6rem;
+				}
+			}
+		}
+
+		ul {
+			list-style-type: none;
+	
+			a {
+				transition: opacity $t-duration;
+				text-decoration: none;
+	
+				&:hover {
+					@include breakpoint-up(tablet) {
+						opacity: .7;
+					}
+				}
+			}
+		}
+
+		li + li {
+			margin-top: 1rem;
+
+			@include breakpoint-down(large-desktop) {
+				margin-top: .5rem;
+			}
+		}
+	}
+
+	.footer__content--contacts {
+		ul a {
+			display: inline-flex;
+			align-items: center;
+		}
+
+		ul a figure {
+			width: 2.4rem;
+			height: 2.4rem;
+			border: 1px solid $c-white;
+			border-radius: 50%;
+			padding: .5rem;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			margin-right: .7rem;
+		}
+
+		li + li {
+			margin-top: 1.8rem;
+
+			@include breakpoint-down(large-desktop) {
+				margin-top: 1rem;
+			}
+		}
+	}
+
+	.footer__bar {
+		border-top: 1px solid $c-gray;
+		padding: 3.9rem 0 4rem;
+
+		@include breakpoint-down(xl-desktop) {
+			padding: 2rem 0;
+		}
+
+		@include breakpoint-down(small-desktop) {
+			padding: 1.2rem 0;
+		}
+
+		@include breakpoint-down(tablet) {
+			padding: 1rem 0;
+		}
+
+		@include breakpoint-down(mobile-medium) {
+			padding: .8rem 0;
+		}
+	}
+
+	.footer__copyright {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		p {
+			margin: 0 .5rem 0 0;
+			font-size: 1.25rem;
+		}
+
+		a {
+			display: inline-block;
+		}
+	}
+}

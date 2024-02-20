@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+ list links
+\* ------------------------------------------------------------ */
+
+.list-links {
+    ul {
+        list-style-type: none;
+    }   
+
+    li + li {
+        margin-top: .5rem;
+    }
+
+    a {
+        transition: color $t-duration;
+        text-decoration: none;
+
+        &:hover {
+            @include breakpoint-up(tablet) {
+                color: $c-red;
+            }
+        }
+    }
+}

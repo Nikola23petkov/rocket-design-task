@@ -1,0 +1,72 @@
+/* ------------------------------------------------------------ *\
+	Btn-icon
+\* ------------------------------------------------------------ */
+
+.btn-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    border: 1px solid $c-gray;
+    position: relative;
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    transition: opacity $t-duration;
+
+    @include breakpoint-down(large-desktop) {
+        width: 5rem;
+        height: 5rem;
+        padding: 1.2rem;
+    }
+
+    @include breakpoint-down(mobile) {
+        width: 4rem;
+        height: 4rem;
+        padding: .8rem;
+    }
+
+    @include breakpoint-down(mobile-small) {
+		width: 3.4rem;
+        height: 3.4rem;
+        padding: .6rem;
+    }
+
+    &:hover {
+        @include breakpoint-up(tablet) {
+            opacity: .7;
+        }
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 1.4rem;
+        height: 1.4rem;
+        background-color: $c-base;
+        color: $c-white;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        line-height: 0;
+        font-weight: 700;
+    }
+
+    span.is-red {
+        background-color: $c-red;
+    }
+}
+
+.btn-icon--alt {
+    width: 4rem;
+    height: 4rem;
+
+    @include breakpoint-down(small-desktop) {
+        width: 3.6rem;
+        height: 3.6rem; 
+        padding: .8rem;  	
+    }
+}

@@ -1,0 +1,45 @@
+/* ------------------------------------------------------------ *\
+ range field
+\* ------------------------------------------------------------ */
+
+.range-field {
+    display: flex;
+    align-items: center;
+    
+    label {
+        margin-right: 1rem;
+    }
+
+    input {
+        background-color: #F5F5F5;
+        border-radius: .5rem;
+        border: none;
+        width: 6.2rem;
+        height: 3.2rem;
+        text-align: right;
+        padding: .5rem;
+
+        @include breakpoint-down(small-desktop) {
+            padding: .5rem .7rem;
+            height: 3rem;
+        }
+
+        @include breakpoint-down(tablet) {
+            height: 2.6rem;
+        }
+
+        @include breakpoint-down(mobile) {
+            height: 2.4rem;
+        }
+    }
+
+    span {
+        margin-left: 1rem;
+    }
+
+    &--red {
+        input {
+            color: $c-red;
+        }
+    }
+}

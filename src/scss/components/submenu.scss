@@ -1,0 +1,241 @@
+/* ------------------------------------------------------------ *\
+ Submenu
+\* ------------------------------------------------------------ */
+
+.submenu {
+    transition: opacity $t-duration, visibility $t-duration;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    max-height: 52.4vh;
+    overflow: auto;
+    box-shadow: 0 .3rem .3rem 0rem rgba(0,0,0,.2);
+    padding: 3.9rem 1.5rem 0 2.2rem;
+    background-color: $c-white;
+    color: $c-base;
+    overflow-x: hidden;
+
+    @include breakpoint-down(xl-desktop) {
+        padding: 3rem 1.5rem 0;
+    }
+
+    @include breakpoint-down(large-desktop) {
+        max-height: 58vh;
+        padding-top: 2.2rem;
+    }
+
+    @include breakpoint-down(small-desktop) {
+        max-height: unset;
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        top: 0;
+        height: unset;
+        overflow: visible;
+        box-shadow: none;
+        background-color: unset;
+        padding: 0 #{$shell-gutter};
+        margin: 0;
+        transition: margin $t-duration, grid-template-rows $t-duration;
+    }
+
+    @include breakpoint-down(tablet) {
+        padding: 0 #{$shell-gutter-mobile};
+    }
+
+    .submenu__cols {
+        display: flex;
+        margin: 0 -1.7rem;
+        overflow: hidden;
+
+        @include breakpoint-down(xl-desktop) {
+            margin: 0 -1.5rem;
+		}
+
+        @include breakpoint-down(small-desktop) {
+            display: block;
+            margin: 0;
+		}
+    }
+
+    .submenu__col {
+        padding: 0 1.7rem 1rem;
+        flex: 1;
+        max-width: 100%;
+
+        @include breakpoint-down(xl-desktop) {
+            padding: 0 1.5rem 1rem;
+		}
+
+        @include breakpoint-down(small-desktop) {
+            padding: 0;
+		}
+    }
+
+    .submenu__col:not(:last-child) {
+        border-right: 1px solid $c-gray;
+        
+        @include breakpoint-down(small-desktop) {
+            border: none;
+            margin-bottom: 2rem;
+		}
+    }
+    
+    .btn + .submenu__links {
+        margin-top: 1.9rem;
+
+        @include breakpoint-down(small-desktop) {
+            margin-top: 2rem;
+		}
+    }
+
+    .submenu__links {
+        overflow: hidden;
+    }
+
+    .submenu__links + .submenu__links {
+        margin-top: 4rem;
+
+        @include breakpoint-down(small-desktop) {
+            margin-top: 2rem;
+		}
+    }
+
+    .submenu__title > h4 {
+        font-size: 2rem;
+        margin-bottom: 0;
+
+        @include breakpoint-down(large-desktop) {
+            font-size: 1.8rem;
+		}
+
+        @include breakpoint-down(small-desktop) {
+            margin-right: 1rem;
+		}
+    }
+
+    .submenu__title:not(:last-child) {
+        margin-bottom: 1.2rem;
+
+        @include breakpoint-down(small-desktop) {
+           margin-bottom: 0;
+		}
+    }
+
+    .submenu__title > h4 > a {
+        display: inline-flex;
+        align-items: center;
+        transition: opacity $t-duration;
+        text-decoration: none;
+        line-height: 1;
+        
+        @include breakpoint-up(small-desktop) {
+            // pointer-events: none;
+        }
+
+        &:hover {
+            @include breakpoint-up(tablet) {
+                opacity: .7;
+            }
+        }
+
+        img {
+            margin-right: .8rem;
+            margin-bottom: .2rem;
+        }
+    }
+
+    .submenu__title.accordion__head .accordion__trigger {
+        padding-right: 1rem;
+    }
+
+    .submenu__links:not(.submenu__links--grid) .submenu__content > ul > li + li {
+        margin-top: 1.5rem;
+
+        @include breakpoint-down(small-desktop) {
+            margin-top: 1.2rem;
+		}
+    }
+
+    .submenu__content {
+        @include breakpoint-down(small-desktop) {
+            padding: 0 3rem;       
+        }
+    }
+
+    .submenu__content > ul > li {
+        line-height: 1;
+    }
+
+    .submenu__content > ul > li > a {
+        transition: opacity $t-duration;
+        text-decoration: none;
+        font-size: 1.6rem;
+        line-height: 1.2;
+
+        &:hover {
+            @include breakpoint-up(tablet) {
+                opacity: .7;
+            }
+        }
+    }
+
+    .submenu__links--grid .submenu__content {
+        > ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -.3rem .1rem;
+
+            @include breakpoint-down(mobile-medium) {
+                margin: -.7rem -.7rem;
+            }
+        }
+
+        > ul > li {
+            flex: 0 0 50%;
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            padding: .3rem 0;
+
+            @include breakpoint-down(small-desktop) {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            @include breakpoint-down(mobile-medium) {
+                flex: 0 0 calc(100%/2);
+                max-width: calc(100%/2);
+                padding: .7rem .7rem;
+            }
+        }
+
+        > ul > li > a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1;
+            border-radius: .5rem;
+            transition: box-shadow $t-duration;
+            width: 100%;
+            min-height: 4rem;
+            
+            &:hover {
+                @include breakpoint-up(tablet) {
+                    opacity: 1;
+                    box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+                }
+            }
+
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+}

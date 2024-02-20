@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------ *\
+ content
+\* ------------------------------------------------------------ */
+
+.content {
+    flex: 0 0 75%;
+    max-width: 75%;
+
+    @include breakpoint-down(tablet) {
+        max-width: 100%;   
+    }
+
+    .paging {
+        padding-right: 39rem;
+
+        @include breakpoint-down(xl-desktop) {
+            padding-right: 0;
+        }
+    }
+}

@@ -1,0 +1,68 @@
+/* ------------------------------------------------------------ *\
+ section-callout
+\* ------------------------------------------------------------ */
+
+.section-callout {
+    padding: 4rem 0 3.8rem;
+    background-color: $c-red;
+    color: $c-white;
+
+    @include breakpoint-down(small-desktop) {
+        padding: 3.8rem 0 4.2rem;   	
+    }
+
+    @include breakpoint-down(tablet) {
+        padding: 3rem 0 3.2rem;
+    }
+
+    .section__inner {
+        display: flex;
+
+        @include breakpoint-down(small-desktop) {
+            display: block;
+        }
+    }
+
+    .section__head {
+        flex: 0 0 38.3%;
+        max-width: 38.3%;
+        padding-right: 14rem;
+
+        @include breakpoint-down(xl-desktop) {
+			padding-right: 6rem;
+		}
+
+        @include breakpoint-down(large-desktop) {
+            flex: 0 0 34%;
+            max-width: 34%;
+            padding-right: 3rem;
+		}
+
+        @include breakpoint-down(small-desktop) {
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-right: 0;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+    }
+
+    .section__body {
+        flex: 0 0 61.7%;
+        max-width: 61.7%;
+        padding-top: .5rem;
+    
+        @include breakpoint-down(large-desktop) {
+            flex: 0 0 66%;
+            max-width: 66%;
+		}
+
+        @include breakpoint-down(small-desktop) {
+            max-width: 100%;
+        }
+    }
+}

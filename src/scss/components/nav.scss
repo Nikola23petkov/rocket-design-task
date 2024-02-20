@@ -1,0 +1,192 @@
+/* ------------------------------------------------------------ *\
+ nav
+\* ------------------------------------------------------------ */
+
+.nav {
+	background-color: $c-red;
+	color: $c-white;
+	position: relative;
+
+	@include breakpoint-down(small-desktop) {
+		background-color: transparent;
+		color: $c-base;
+	}
+
+	&:before {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 100%;
+		width: 100%;
+		height: 100%;
+		background-color: inherit;
+	}
+
+	&:after {
+		position: absolute;
+		content: '';
+		top: 0;
+		right: 100%;
+		width: 100%;
+		height: 100%;
+		background-color: inherit;
+	}
+
+	>ul {
+		display: flex;
+		align-items: center;
+
+		@include breakpoint-down(small-desktop) {
+			display: block;
+		}
+	}
+
+	>ul>li+li {
+		margin-left: 4.1rem;
+
+		@include breakpoint-down(small-desktop) {
+			margin: 0 0 1rem;
+			padding-top: 1rem;
+			border-top: 1px solid $c-base;
+		}
+	}
+
+	>ul>li>a {
+		transition: opacity $t-duration;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 1.8rem;
+		line-height: 1;
+		color: $c-white;
+
+		@include breakpoint-down(small-desktop) {
+			color: $c-base;
+			font-size: 2rem;
+			padding: 0 #{$shell-gutter};
+		}
+
+		@include breakpoint-down(tablet) {
+			padding: 0 #{$shell-gutter-mobile};
+		}
+
+		@include breakpoint-down(mobile) {
+			font-size: 1.8rem;
+		}
+
+		&:hover {
+			@include breakpoint-up(tablet) {
+				opacity: .7;
+			}
+		}
+	}
+
+	>ul>li.has-submenu {
+		&:hover {
+			@include breakpoint-up(mobile) {
+				.submenu {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+		.submenu {
+			@include breakpoint-down(small-desktop) {
+				transition: margin $t-duration, grid-template-rows $t-duration;
+			}
+		}
+
+		&.is-active {
+			.submenu {
+				@include breakpoint-down(small-desktop) {
+					margin: 1.5rem 0;
+				}
+			}
+		}
+	}
+
+	>ul>li.has-submenu>a {
+		display: inline-flex;
+		background-color: $c-base;
+		position: relative;
+		padding: 1.1rem 4rem 2.3rem 3rem;
+		
+		@include breakpoint-down(small-desktop) {
+			display: flex;
+			margin-bottom: 0;
+			color: $c-white;
+		}
+
+		&.accordion__trigger {
+			padding: 1.1rem 4rem 2.3rem 3rem;
+			
+			@include breakpoint-down(xl-desktop) {
+				padding: 1.2rem 4rem 1.2rem 3rem;
+			}
+		}
+
+		img {
+			margin-right: 2.8rem;
+
+			@include breakpoint-down(small-desktop) {
+				margin-right: 1.5rem;
+			}
+		}
+
+		&:before {
+			position: absolute;
+			content: '';
+			bottom: 100%;
+			left: 0;
+			width: 100%;
+			height: 1.1rem;
+			background-color: $c-base;
+			border-radius: .4rem .4rem 0 0;
+			transition: opacity $t-duration;
+
+			@include breakpoint-down(small-desktop) {
+				display: none;
+			}
+		}
+
+		&.accordion__trigger {
+			&:before {
+				@include breakpoint-up(small-desktop) {
+					bottom: 100%;
+					left: 0;
+					width: 100%;
+					height: 1.1rem;
+					background-color: $c-base;
+					border-radius: .4rem .4rem 0 0;
+					transition: opacity $t-duration;
+					top: unset;
+					transform: unset;
+					display: block;
+					right: unset;
+				}
+
+				@include breakpoint-down(small-desktop) {
+					display: block;
+					bottom: unset;
+					left: unset;
+					border-radius: none;
+					background-color: $c-white;
+					margin-right: #{$shell-gutter};
+				}
+
+				@include breakpoint-down(tablet) {
+					margin-right: #{$shell-gutter-mobile};
+				}
+			}
+
+			&:after {
+				background-color: $c-white;
+				margin-right: #{$shell-gutter};
+
+				@include breakpoint-down(tablet) {
+					margin-right: #{$shell-gutter-mobile};
+				}
+			}
+		}
+	}
+}

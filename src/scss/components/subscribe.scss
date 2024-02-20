@@ -1,0 +1,93 @@
+/* ------------------------------------------------------------ *\
+ Subscribe
+\* ------------------------------------------------------------ */
+
+.subscribe {
+    .subscribe__inner {
+        display: flex;
+        margin: -1rem -1rem;
+
+        @include breakpoint-down(large-desktop) {
+            margin: -.7rem;
+		}
+
+        @include breakpoint-down(mobile) {
+            display: block;
+            margin: 0;
+        }
+    }
+
+    .subscribe__field {
+        height: 6rem;
+        color: $c-base;
+        background-color: $c-white;
+        border-radius: .5rem;
+        padding: .6rem 2rem .4rem;
+        flex: 1;
+        margin: 1rem 1rem;
+        border: none;
+
+        @include breakpoint-down(large-desktop) {
+            height: 5rem;
+            margin: .7rem;
+            padding: .6rem 1.5rem .4rem;
+		}
+
+        @include breakpoint-down(small-desktop) {
+            height: 4rem;
+            padding: .5rem 1.5rem;
+        }
+
+        @include breakpoint-down(tablet) {
+            height: 3.4rem;
+            padding: .5rem 1rem;
+        }
+
+        @include breakpoint-down(mobile) {
+            display: block;
+            width: 100%;
+            margin: 0 0 1.5rem;
+            height: 3.8rem;
+        }
+
+        &::placeholder {
+            opacity: 1;
+            color: #434343;
+        }
+    }
+
+    .subscribe__btn {
+        margin: 1rem 1rem;
+        min-width: 19.5rem;
+        border: none;
+        text-transform: uppercase;
+        font-size: 2rem;
+        min-height: 6rem;
+
+        @include breakpoint-down(large-desktop) {
+            font-size: 1.7rem;
+            margin: .7rem;
+            min-height: 5rem;
+            min-width: 18rem;
+		}
+
+        @include breakpoint-down(small-desktop) {
+            min-height: 4rem;
+        }
+
+        @include breakpoint-down(tablet) {
+            font-size: 1.6rem;
+            min-width: 16rem;
+            padding: .7rem 1rem;
+            min-height: 3.4rem;
+        }
+
+        @include breakpoint-down(mobile) {
+            min-width: unset;
+            display: block;
+            width: 100%;
+            margin: 0;
+            min-height: 3.8rem;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------ *\
+	Variables
+\* ------------------------------------------------------------ */
+
+//Variables
+$font-size-base             : 1.8rem;
+$font-weight-base           : 400; 
+$line-height-base           : 1.4;
+$font-size-base-tablet      : 1.7rem;
+$font-size-base-mobile      : 1.6rem;
+
+//fonts
+$ff-sans-serif              : "Roboto", sans-serif;
+$ff-serif                   : Georgia, "Times New Roman", Times, serif;
+
+$t-duration                 : 0.4s;
+
+//container
+$shell-max-width            : 1680px;
+$shell-gutter               : 30px;
+$shell-gutter-mobile        : 20px;
+
+//colors
+$c-black                    : #000;
+$c-white                    : #fff;
+$c-gray-dark                : #444;
+$c-gray                     : #ECECEC;
+$c-red                      : #D10037;
+$c-base                     : $c-gray-dark;
+
+//breakpoints
+$responsive-ios             : 812px;
+
+$breakpoints: (
+	mobile-small: 374px,
+	mobile-medium: 575px,
+	mobile: 767px,
+	admin-bar: 782px,
+	tablet: 1023px,
+	small-desktop: 1199px,
+	large-desktop: 1399px,
+	xl-desktop: 1599px
+);
